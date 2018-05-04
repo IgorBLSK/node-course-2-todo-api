@@ -2,6 +2,7 @@ var express = require('express');
 // zmeni body na citatelny js object
 var bodyParser = require('body-parser');
 
+// ked je to v {} tak berieme iba tu metodu nie cely file ES6 destructuring
 var {mongoose} = require('./db/mongoose');
 var {Todo} = require('./models/todo');
 var {User} = require('./models/user');
@@ -25,3 +26,5 @@ app.post('/todos', (req, res) => {
 app.listen(3000, () => {
     console.log('Started on port 3000');
 });
+
+module.exports = {app};
